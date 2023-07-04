@@ -18,12 +18,14 @@ $desktop:1024px;
     }
     input{
         background-color: rgba(255, 229, 176, 1);
+        border-radius: 5%;
         border: 1px solid black;
         width: 95%;
         height: 10dvw;
     }
     .container-form{
         background-color: rgba(255, 209, 111, 1);
+        border-radius: 5%;
         width: 90%;
         margin-top: 5%;
         border: 1px solid maroon;
@@ -41,6 +43,7 @@ $desktop:1024px;
   }
   button{
     padding: 5% 15% 5% 15%;
+    border-radius: 4%;
     background-color: rgba(255, 229, 176, 1);
     border: 1px solid black;
   }
