@@ -3,9 +3,12 @@ $tablet:728px;
 $desktop:1024px;
 
 @media (max-width:$phone){
-
-  
+    .logo{
+        text-align: center;
+    }
 }
+  
+
 @media (min-width:$phone) and (max-width: $tablet){
 
   
