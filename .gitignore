@@ -1,4 +1,5 @@
 src/main/front/node_modules
+src/main/front/.vscode
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
