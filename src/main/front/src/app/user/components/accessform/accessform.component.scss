@@ -54,6 +54,59 @@ $desktop:1024px;
   
 }
 @media (min-width:$desktop) {
+  .center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+form{
+    width: 50%;
+    margin-top: -5%;
+}
+.row{
+    width: 90%;
+    margin-top: 20%;
 
-  
+}
+input{
+    background-color: rgba(255, 229, 176, 1);
+    border-radius: 5%;
+    border: 1px solid black;
+    width: 95%;
+    height: 3dvw;
+}
+.container-form{
+    background-color: rgba(255, 209, 111, 1);
+    border-radius: 5%;
+    width: 50%;
+    border: 1px solid maroon;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:5%;
+    margin-left: 20%;
+
+    
+}
+.form-group{
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 5%;
+}
+button{
+padding: 5% 15% 5% 15%;
+border-radius: 4%;
+background-color: rgba(255, 229, 176, 1);
+border: 1px solid black;
+margin-left: 10%;
+}
+.form-control{
+  width: 90%;
+  margin-top: -5%;
+
+}
+.forgot{
+  text-align: center;
+}
 }

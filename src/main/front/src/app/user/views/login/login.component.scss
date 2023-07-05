@@ -35,6 +35,30 @@ $desktop:1024px;
   
 }
 @media (min-width:$desktop) {
-
+    .container{
+        position: absolute;
+        background-image: url("../../../../assets/background.png");
+        background-repeat: no-repeat;
+        background-size:auto;
+        bottom: 0;
+        top: 0;
+        left: 0%;
+        right: 0;
+        padding: -50%;
+        
+        
+    }
+    .logo{
+        text-align: center;
+        margin-bottom: 10%;
+        margin: 2%;
+    }
+    .backgroud{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        
+    }
   
 }
