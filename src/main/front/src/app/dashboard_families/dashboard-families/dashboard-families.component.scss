@@ -1,0 +1,48 @@
+$phone:320px;
+$tablet:728px;
+$desktop:1024px;
+
+@media (min-width:$phone) and (max-width: $tablet){
+    .container_families{
+      height:60vw;
+      margin-bottom: 20px;
+    }
+    
+/*     .header_families{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+        
+      } */ 
+
+      .container_origin{
+        width: 20%;
+        height: 20%;
+        background-color: #477D47;
+        margin-right: 20%; 
+        padding: 10px;
+      }
+
+      .container_specimen{
+        width: 20%;
+        height: 20%;
+        background-color: #477D47;
+        padding: 10px;
+      }
+
+
+
+  }
+  @media (min-width:$desktop) {
+    .container_families{
+      height:40vw;
+      margin-bottom: 20%;
+    }
+
+    .header_families{
+        display: flex;
+        justify-content: center;
+      }
+    
+  }
+  
