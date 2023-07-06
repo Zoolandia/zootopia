@@ -1,40 +1,22 @@
-$phone:480px;
-$tablet:728px;
-$desktop:1024px;
 
-@media (max-width:$phone){
     .container{
-        position: fixed;
-        background-image: url("../../../../assets/back.png");
+        position:fixed;
+        background-image: url("../../../../assets/background.png");
         background-repeat: no-repeat;
-        background-size: cover;
-        // border: 20px solid blue;
+        background-size:auto;
         bottom: 0;
         top: 0;
-        left: 0;
+        left: 0%;
         right: 0;
-        padding: 10%;
+        padding: 0%;
+        
+        
         
     }
     .logo{
         text-align: center;
-        margin-bottom: 10%;
+        margin-bottom: 0%;
+        margin-top: 2%;
     }
-    .backgroud{
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        height: 100%;
-        
-    }
-}
-  
-
-@media (min-width:$phone) and (max-width: $tablet){
 
   
-}
-@media (min-width:$desktop) {
-
-  
-}
