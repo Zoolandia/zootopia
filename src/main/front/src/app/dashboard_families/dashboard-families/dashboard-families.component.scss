@@ -1,48 +1,109 @@
 $phone:320px;
-$tablet:728px;
+$tablet:768px;
 $desktop:1024px;
 
-@media (min-width:$phone) and (max-width: $tablet){
-    .container_families{
-      height:60vw;
-      margin-bottom: 20px;
-    }
-    
-/*     .header_families{
-        display: grid;
-        justify-content: center;
-        grid-template-columns: repeat(2, 1fr);
-        
-      } */ 
-
-      .container_origin{
-        width: 20%;
-        height: 20%;
-        background-color: #477D47;
-        margin-right: 20%; 
-        padding: 10px;
-      }
-
-      .container_specimen{
-        width: 20%;
-        height: 20%;
-        background-color: #477D47;
-        padding: 10px;
-      }
+.row{
+  margin-top: 20px;
+}
 
 
+.origen{
+   text-align: center; 
+  background-color: #477D47;
+  padding: 10px;
+  display:inline-block;
+  color:white;
+}
+
+.ejemplares{
+  text-align: center;
+  display:inline-block;
+  background-color: #477D47;
+  padding: 10px;
+  color:white;
+}
+
+.count{
+  background-color: #FFE5B0;
+  color: green;
+  padding: 10px;
+}
+
+.col-6{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.col-sm-12{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.col-md-4{
+  text-align: center;
+}
+
+.col-md-2{
+   justify-content: center;
+}
+
+
+@media (min-width:$phone) and (max-width:$tablet){
+  .origen{
+    width: 85%;
+  }
+
+  .ejemplares{
+    width: 85%;
 
   }
-  @media (min-width:$desktop) {
-    .container_families{
-      height:40vw;
-      margin-bottom: 20%;
+
+}
+@media (min-width:$tablet) and (max-width:$desktop){
+
+  .families img{
+    width: 95%;
+  }
+
+  .families-abajo{
+    margin-top: 50px;
+  }
+
+
+  .origen{
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .ejemplares{
+    width: 100%;
+    font-size: 18px;
+
+  }
+  .row{
+    justify-content: center;
+  }
+}
+  
+@media (min-width:$desktop) {
+
+    .families-abajo{
+      margin-top: 50px;
     }
 
-    .header_families{
-        display: flex;
-        justify-content: center;
-      }
+    .origen{
+      width: 90%;
+    }
+
+    .ejemplares{
+      width: 90%;
+
+    }
+
+    .row{
+      justify-content: center;
+    }
     
   }
   

@@ -5,18 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './user/views/login/login.component';
 import { AccessformComponent } from './user/components/accessform/accessform.component';
+import { DashboardFamiliesComponent } from './dashboard_families/dashboard-families/dashboard-families.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    AccessformComponent
+    AccessformComponent,
+    DashboardFamiliesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, DashboardFamiliesComponent]
 })
 export class AppModule { }
