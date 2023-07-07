@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center form-container">
+    <form>
+        <div class="m-3">
+            <h1>Editar Ejemplar</h1>
+        </div>
+        
+        <div class="form-group mb-3">
+            <label>Nombre:</label>
+            <input class="form-control" type="text" name="name" [(ngModel)]="name">
+        </div>
+        
+        <div class="form-group mb-3">
+            <label>Tipo:</label>
+            <input class="form-control" type="text" name="type" [(ngModel)]="type">
+        </div>
+        
+        <div class="form-group mb-3">
+            <label>Familia:</label>
+            <select class="form-control" name="family" [(ngModel)]="family">
+                <option value="option1">Felino</option>
+                <option value="option2">Canino</option>
+                <option value="option3">Reptil</option>
+                <option value="option4">Mustelidos</option>
+                <option value="option5">Lepóridos</option>
+            </select>
+        </div>
+        
+        <div class="form-group mb-3">
+            <label>Genero:</label>
+            <select class="form-control" name="gender" [(ngModel)]="gender">
+                <option value="Macho">Macho</option>
+                <option value="Hembra">Hembra</option>
+            </select>
+        </div>
+        
+        <div class="form-group mb-3">
+            <label>Fecha de admision:</label>
+            <input class="form-control" type="date" name="admission" [(ngModel)]="admission">
+        </div>
+        
+        <div class="form-group mb-3">
+            <label>Imagen:</label>
+            <input class="form-control" type="file" name="image" (change)="onFileSelected($event)">
+        </div>
+        
+        <div *ngIf="image">
+            <img class="selected-image" [src]="getObjectURL(image)">
+        </div>
+        <button type="submit" (click)="submitForm()">Cancelar</button>
+        <button type="submit" (click)="submitForm()">Aplicar</button>
+    </form>
+</div>
