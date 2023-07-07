@@ -1,6 +1,10 @@
 $phone:480px;
 $tablet:728px;
 $desktop:1024px;
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
 
 @media (max-width:$phone){
   input{
