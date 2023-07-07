@@ -11,13 +11,12 @@ export class AccessFormComponent {
   errorMessage: string = '';
 
   login() {
-
+    
     if (this.username === 'admin' && this.password === 'admin') {
-      // Inicio de sesión exitoso
-      console.log('Inicio de sesión exitoso');
+    
     } else {
-      // Generar error y mostrar mensaje
-      this.errorMessage = 'Los datos introducidos no son correctos, por favor compruébelos.';
+     
+      throw new Error('Los datos introducidos no son correctos, por favor compruébelos.');
     }
   }
 }
