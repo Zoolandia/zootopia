@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './user/views/login/login.component';
 import { AccessformComponent } from './user/components/accessform/accessform.component';
 import { DashboardFamiliesComponent } from './dashboard_families/dashboard-families/dashboard-families.component';
+import { HeaderComponent } from './shared/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AccessformComponent,
-    DashboardFamiliesComponent
+    DashboardFamiliesComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
