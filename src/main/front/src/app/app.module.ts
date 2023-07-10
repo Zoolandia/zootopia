@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './user/views/login/login.component';
 import { AccessformComponent } from './user/components/accessform/accessform.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { TestdbComponent } from './testdb/testdb.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    AccessformComponent
+    AccessformComponent,
+    TestdbComponent
   ],
   imports: [
     BrowserModule,

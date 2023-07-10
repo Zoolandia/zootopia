@@ -1,4 +1,4 @@
-package org.factoriaf5.zootopia.controllers.repositories;
+package org.factoriaf5.zootopia.repositories;
 
 import org.factoriaf5.zootopia.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;

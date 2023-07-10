@@ -4,20 +4,21 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "users")
-
 public class Users {
-    public Users(Long id, String username, String password) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String username;
     private String password;
+
+    public Users() {
+    }
+
+    public Users(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
     public Long getId() {
         return id;
