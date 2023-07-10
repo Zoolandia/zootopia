@@ -48,6 +48,14 @@ $desktop:1024px;
    justify-content: center;
 }
 
+.dropdown-item{
+  text-align: center;
+}
+
+.dropdown-menu{
+}
+
+
 
 @media (min-width:$phone) and (max-width:$tablet){
   .origen{
