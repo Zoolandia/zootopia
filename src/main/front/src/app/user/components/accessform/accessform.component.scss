@@ -5,7 +5,7 @@ $desktop:1024px;
 @media (max-width:$phone){
   .error-message {
     color: red;
-    margin-top: 10px;
+    margin-top: -10%;
   }
 
   input{
@@ -42,12 +42,13 @@ border: 1px solid black;
 color:black;
 font-weight: bold;
 margin-left: 50%;
-margin-top: -5%;
+margin-top:10%;
 text-align: center;
 }
 .form-control{
-  height: 9dvw;
+  height: 10dvw;
   margin-top: 15%;
+  width: 90%;
 
 }
 .forgot{
@@ -62,7 +63,7 @@ label{
 @media (min-width: $tablet){
   .error-message {
     color: red;
-    margin-top: 10px;
+    margin-top: -10%;
   }
 input{
     background-color: rgba(255, 229, 176, 1);
@@ -81,7 +82,7 @@ input{
     align-items: center;
     padding:1%;
     margin-left: 23%;
-    margin-top: 4%; 
+    margin-top: 3%; 
 }
 .form-group{
 display: flex;
@@ -99,7 +100,7 @@ border: 1px solid black;
 color:black;
 font-weight: bold;
 margin-left: 50%;
-margin-top: -5%;
+margin-top: 4%;
 text-align: center;
 }
 .form-control{
@@ -120,6 +121,7 @@ label{
 @media (min-width:$desktop) {
   .error-message {
     color: red;
+    margin-top: -10%;
     
   }
   input{
@@ -157,7 +159,7 @@ border: 1px solid black;
 color:black;
 font-weight: bold;
 margin-left: 50%;
-margin-top: -5%;
+margin-top: 5%;
 text-align: center;
 }
 .form-control{
