@@ -14,7 +14,9 @@ import { HeaderComponent } from './shared/header/header.component';
     LoginComponent,
     AccessformComponent,
     DashboardFamiliesComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent,
+    AccessformComponent
   ],
   imports: [
     BrowserModule,
