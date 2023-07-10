@@ -7,6 +7,7 @@ import { LoginComponent } from './user/views/login/login.component';
 import { AccessformComponent } from './user/components/accessform/accessform.component';
 import { DashboardFamiliesComponent } from './dashboard_families/dashboard-families/dashboard-families.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { EditFormComponent } from './user/components/edit-form/edit-form.component';
 import { AddFormComponent } from './forms/add-form/add-form.component';
 import { FormsModule } from '@angular/forms'; 
 @NgModule({
@@ -16,17 +17,15 @@ import { FormsModule } from '@angular/forms';
     AccessformComponent,
     DashboardFamiliesComponent,
     HeaderComponent,
-<<<<<<< HEAD
-    AddFormComponent
-=======
+    AddFormComponent,
     LoginComponent,
-    AccessformComponent
->>>>>>> develop
+    AccessformComponent,
+    EditFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent, DashboardFamiliesComponent]
