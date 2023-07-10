@@ -32,7 +32,21 @@ public class UsersService {
         return usersRepository.findById(id);
     }
 
+
     public Users updateById(Users request, Long id) {
+        if (usersRepository.existsById(id)) {
+            Users user = usersRepository.findById(id).get();
+            user.setUsername(request.getUsername());
+            user.setPassword(request.getPassword());
+            return usersRepository.save(user);
+        } else {
+            throw new RuntimeException("User not found with id: " + id);
+        }
+    }
+
+
+
+    /*public Users updateById(Users request, Long id) {
         Users user = usersRepository.findById(id).get();
 
         user.setUsername(request.getUsername());
@@ -40,14 +54,25 @@ public class UsersService {
         user.setId(request.getId());
 
         return user;
-    }
+    }*/
+
 
     public Boolean deleteUser(Long id) {
         try {
             usersRepository.deleteById(id);
             return true;
         } catch (Exception e) {
+            System.out.println("Error al eliminar el usuario con ID: " + id);
+            e.printStackTrace();
             return false;
         }
     }
+    /**public Boolean deleteUser(Long id) {
+        try {
+            usersRepository.deleteById(id);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }*/
 }
