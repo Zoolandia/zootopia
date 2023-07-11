@@ -1,43 +1,38 @@
 package org.factoriaf5.zootopia.models.animals;
+import org.factoriaf5.zootopia.models.families.Families;
+import org.factoriaf5.zootopia.models.continents.Continents;
 
 import jakarta.persistence.*;
-import org.factoriaf5.zootopia.models.continents.Continents;
-import org.factoriaf5.zootopia.models.families.Families;
-
-import java.util.Date;
 
 @Entity
 @Table(name = "animals")
 public class Animals {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
+    @Column(name = "name", nullable = false)
     private String name;
+
+    @Column(name = "type", nullable = false)
     private String type;
-    private  String gender;
 
-    @ManyToOne
-    @JoinColumn(name = "continents_id")
-    private Continents continents;
-
-    private Date date;
-    private String imgUrl;
+    @Column(name = "gender")
+    private String gender;
 
     @ManyToOne
     @JoinColumn(name = "families_id")
-    private Families families;
+    private Families family;
 
-    public Animals(Long id, String name, String type, String gender, Continents continents, Date date, String imgUrl, Families families) {
-        this.id = id;
-        this.name = name;
-        this.type = type;
-        this.gender = gender;
-        this.continents = continents;
-        this.date = date;
-        this.imgUrl = imgUrl;
-        this.families = families;
-    }
+    @ManyToOne
+    @JoinColumn(name = "continents_id")
+    private Continents continent;
+
+    @Column(name = "date")
+    private java.sql.Date date;
+
+    @Column(name = "img_url")
+    private String imgUrl;
 
     public Long getId() {
         return id;
@@ -71,19 +66,27 @@ public class Animals {
         this.gender = gender;
     }
 
-    public Continents getContinents() {
-        return continents;
+    public Families getFamily() {
+        return family;
     }
 
-    public void setContinents(Continents continents) {
-        this.continents = continents;
+    public void setFamily(Families family) {
+        this.family = family;
     }
 
-    public Date getDate() {
+    public Continents getContinent() {
+        return continent;
+    }
+
+    public void setContinent(Continents continent) {
+        this.continent = continent;
+    }
+
+    public java.sql.Date getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(java.sql.Date date) {
         this.date = date;
     }
 
@@ -94,12 +97,7 @@ public class Animals {
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
     }
-
-    public Families getFamilies() {
-        return families;
-    }
-
-    public void setFamilies(Families families) {
-        this.families = families;
-    }
 }
+
+
+

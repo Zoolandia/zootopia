@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-testdb',
   templateUrl: './testdb.component.html',
@@ -16,7 +17,7 @@ export class TestdbComponent implements OnInit {
   }
 
   getTableData(): void {
-    this.http.get<any[]>('localhost:3306/ZootopiaDB')
+    this.http.get<any[]>('http://localhost:8000/users')
       .subscribe(data => {
         this.tableData = data;
       });

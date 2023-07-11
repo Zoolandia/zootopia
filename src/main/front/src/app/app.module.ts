@@ -7,6 +7,7 @@ import { LoginComponent } from './user/views/login/login.component';
 import { AccessformComponent } from './user/components/accessform/accessform.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { TestdbComponent } from './testdb/testdb.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TestdbComponent } from './testdb/testdb.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

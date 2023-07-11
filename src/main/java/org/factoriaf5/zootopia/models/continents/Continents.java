@@ -13,6 +13,9 @@ public class Continents {
     private String name;
     private String imgUrl;
 
+    public Continents() {
+    }
+
     public Continents(Long id, String name, String imgUrl) {
         this.id = id;
         this.name = name;

@@ -13,6 +13,9 @@ public class Families {
     private String name;
     private String imgUrl;
 
+    public Families() {
+    }
+
     public Families(Long id, String name, String imgUrl) {
         this.id = id;
         this.name = name;
