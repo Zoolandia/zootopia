@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './user/views/login/login.component';
 import { AccessFormComponent } from './user/components/accessform/accessform.component';
+import { AddFormComponent } from './forms/add-form/add-form.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FormsModule } from '@angular/forms';
 
@@ -14,6 +15,7 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     LoginComponent,
     AccessFormComponent,
+    AddFormComponent
   ],
   imports: [
     RouterModule,
