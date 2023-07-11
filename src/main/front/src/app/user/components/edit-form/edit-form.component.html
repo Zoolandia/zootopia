@@ -17,19 +17,19 @@
         <div class="form-group mb-3 fs-4">
             <label class="mb-3 text-light px-3 border border-success shadow">Familia</label>
             <select class="form-control border border-success shadow" name="family" [(ngModel)]="family">
-                <option value="option1">Felino</option>
-                <option value="option2">Canino</option>
-                <option value="option3">Reptil</option>
-                <option value="option4">Mustelidos</option>
-                <option value="option5">Lepóridos</option>
+                <option [ngValue]="'Feline'">Felino</option>
+                <option [ngValue]="'Canine'">Canino</option>
+                <option [ngValue]="'Reptile'">Reptil</option>
+                <option [ngValue]="'Mustelid'">Mustelidos</option>
+                <option [ngValue]="'Lepóridae'">Lepóridos</option>
             </select>
         </div>
         
         <div class="form-group mb-3 fs-4">
             <label class="mb-3 text-light px-3 border border-success shadow">Genero</label>
             <select class="form-control border border-success shadow" name="gender" [(ngModel)]="gender">
-                <option value="Macho">Macho</option>
-                <option value="Hembra">Hembra</option>
+                <option [ngValue]="'Male'">Macho</option>
+                <option [ngValue]="'Female'">Hembra</option>
             </select>
         </div>
         
@@ -48,7 +48,7 @@
         </div>
         <div class="image-container" >
         <div *ngIf="image; else defaultImage">
-            <img class="selected-image mb-3 img-fluid border border-success w-50 h-50" [src]="getObjectURL(image)">
+            <img class="selected-image mb-3 img-fluid border border-success w-50 h-50 " [src]="getObjectURL(image)">
         </div>
         <ng-template #defaultImage>
             <img class="selected-image mb-3 img-fluid border border-success w-50 h-50" src="../../../assets/img/formDefaultImage.png">
