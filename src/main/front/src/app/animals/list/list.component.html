@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+      <div class="datatable">
+        <table mat-table 
+          class="z-depth-1 table table-responsive table-striped table-bordered table-hover"
+        >
+          <thead>
+            <tr class="">
+              <th>NOMBRE</th>
+              <th>TIPO</th>
+              <th>GENERO</th>
+              <th >FECHA</th>
+              <th>ORIGEN</th>
+              <th>IMAGEN</th>
+              <th>FAMILIA</th>            
+            </tr>
+          </thead>
+          <tbody>          
+              <tr *ngFor="let animal of animals" class="">
+                  <td>
+                      <i>{{ animal.name }}</i>
+                    </td>
+                    <td>
+                      <i>{{ animal.type }}</i>
+                    </td>
+                    <td>
+                      <i>{{ animal.gender }}</i>
+                    </td>
+                    <td>
+                      <i>{{ animal.date | date:'d/M/y'}}</i>
+                    </td>
+                    <td>
+                      <i>{{ animal.origin }}</i>
+                    </td>
+                    <td>
+                      <img src="{{ animal.img_url }}" alt="imagen {{ animal.name }}" srcset="" />
+                    </td>
+                    <td>
+                      <i>{{ animal.family }}</i>
+                    </td>
+                    <td>
+                      <button>+</button>
+                    </td>
+              </tr>          
+          </tbody>   
+        </table>
+      </div>
+    </div>
+  </div>
