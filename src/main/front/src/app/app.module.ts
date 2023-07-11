@@ -1,28 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './user/views/login/login.component';
-import { AccessformComponent } from './user/components/accessform/accessform.component';
+import { AccessFormComponent } from './user/components/accessform/accessform.component';
+import { AddFormComponent } from './forms/add-form/add-form.component';
 import { HeaderComponent } from './shared/header/header.component';
-import { TestdbComponent } from './testdb/testdb.component';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    AccessformComponent,
-    TestdbComponent
+    AccessFormComponent,
+    AddFormComponent
   ],
   imports: [
+    RouterModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
