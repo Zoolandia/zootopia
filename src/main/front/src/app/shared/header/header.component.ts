@@ -6,9 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  showDropdown: boolean = false;
+  families: string[] = [];
+  showDropdown1: boolean = false;
+  showDropdown2: boolean = false;
 
-  toggleDropdown() {
-    this.showDropdown = !this.showDropdown;
+
+  toggleDropdown1() {
+    this.showDropdown1 = !this.showDropdown1;
   }
+
+  toggleDropdown2() {
+    this.showDropdown2 = !this.showDropdown2;
+  }
+
+  addFamily() {
+    const newFamily = prompt('Ingrese el nombre de la nueva familia');
+    if (newFamily) {
+      this.families.push(newFamily);
+      console.log('Nueva familia:', newFamily);
+    }
+  }
+  
 }
