@@ -29,7 +29,8 @@ export class HeaderComponent implements OnInit {
   addFamily() {
       this.router.navigate(['/add-form']); 
     }
-  }
+  
+  
 
   goToComponent() {
     this.router.navigate(['/login']);
