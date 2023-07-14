@@ -23,7 +23,8 @@ import { MatTableModule } from '@angular/material/table'
     AccessFormComponent,
     AddFormComponent,
     TestdbComponent,
-    ListComponent
+    ListComponent,
+    
   ],
   imports: [
     RouterModule,
@@ -32,7 +33,7 @@ import { MatTableModule } from '@angular/material/table'
     FormsModule,
     HttpClientModule,
     MatPaginatorModule,
-    MatTableModule 
+    MatTableModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]
