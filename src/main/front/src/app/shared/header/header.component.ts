@@ -27,9 +27,7 @@ export class HeaderComponent implements OnInit {
   }
 
   addFamily() {
-    const newFamily = prompt('Ingrese el nombre de la nueva familia');
-    if (newFamily) {
-      console.log('Nueva familia:', newFamily);
+      this.router.navigate(['/add-form']); 
     }
   }
 
