@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './user/views/login/login.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { AccessFormComponent } from './user/components/accessform/accessform.component';
+import { AddFormComponent } from './forms/add-form/add-form.component';
 
 
 const routes: Routes = [
@@ -10,6 +11,7 @@ const routes: Routes = [
   { path: 'header', component: HeaderComponent }, 
   { path: 'login', component: LoginComponent }, 
   { path: 'accessform', component: AccessFormComponent }, 
+  { path: 'add-form', component: AddFormComponent },
   
   
 ];
