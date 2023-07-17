@@ -2,8 +2,8 @@ import { Component,ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Animal } from "../../../models/Animal.model";
-import { Family } from 'src/app/models/Family.model';
-import { Continent } from 'src/app/models/Continent.model';
+import {  FamilyInterface  } from 'src/app/models/Family.model';
+import {ContinentInterface } from 'src/app/models/Continent.model';
 import { Observable } from 'rxjs/internal/Observable';
 import { AnimalService } from 'src/app/services/animal.service';
 @Component({
@@ -21,8 +21,8 @@ export class EditFormComponent {
   admission:  string = "";
   image: File | null = null;
   continents_id: number | null = null
-  familyList: Family[] = [];
-  continentList: Continent[] = [];
+  familyList: FamilyInterface[] = [];
+  continentList: ContinentInterface [] = [];
 
   @ViewChild('selectedImage') selectedImage: any;
   constructor(private route: ActivatedRoute, private http: HttpClient,private  animalService:AnimalService) {
@@ -55,26 +55,34 @@ export class EditFormComponent {
 
   populateFormWithAnimalData() {
     if (this.animal) {
-      
       this.name = this.animal.name;
       this.type = this.animal.type;
       this.gender = this.animal.gender;
-      this.families_id = this.animal.families_id;
-      this.continents_id = this.animal.continents_id;
-       console.log(this.animal.families_id)
-             
-      const familyIndex = this.familyList.findIndex(family => family.id === this.animal?.families_id);
-        if (familyIndex !== -1) {
-          this.families_id = this.familyList[familyIndex].id;
+  
+      this.families_id = this.animal.families_id?.id ?? null;
+      this.continents_id = this.animal.continents_id?.id ?? null;
+  
+      console.log(this.animal.families_id);
+  
+      const familyIndex = this.familyList.findIndex(
+        family => family.id === this.families_id
+      );
+      if (familyIndex !== -1) {
+        this.families_id = this.familyList[familyIndex].id;
       }
-      console.log(this.families_id)
+      console.log(this.families_id);
+  
       this.admission = this.formatDate(this.animal.date);
+  
       if (this.animal.continents_id) {
-        const continentIndex = this.continentList.findIndex(continent => continent.id === this.animal?.continents_id);
+        const continentIndex = this.continentList.findIndex(
+          continent => continent.id === this.continents_id
+        );
         if (continentIndex !== -1) {
           this.continents_id = this.continentList[continentIndex].id;
         }
       }
+  
       if (this.animal.img_url) {
         this.convertImageUrlToFile(this.animal.img_url)
           .then(file => {
@@ -85,16 +93,16 @@ export class EditFormComponent {
           });
       }
       console.log(this.animal);
-      console.log(this.families_id)
+      console.log(this.families_id);
       console.log(this.families_id);
     }
   }
-  getFamilyes(): Observable<Family[]> {
-    return this.http.get<Family[]>('http://localhost:8000/families');
+  getFamilyes(): Observable<FamilyInterface[]> {
+    return this.http.get<FamilyInterface[]>('http://localhost:8000/families');
   }
   
-  getContinents(): Observable<Continent[]> {
-    return this.http.get<Continent[]>('http://localhost:8000/continents');
+  getContinents(): Observable<ContinentInterface []> {
+    return this.http.get<ContinentInterface []>('http://localhost:8000/continents');
   }
 
   formatDate(date: Date): string {
@@ -136,7 +144,7 @@ export class EditFormComponent {
     };
     console.log(updatedAnimal);
   
-    this.http.put<Continent>('http://localhost:8000/animals/' + id, updatedAnimal)
+    this.http.put<Animal>('http://localhost:8000/animals/' + id, updatedAnimal)
       .subscribe(
         (response) => {
           console.log('Actualización exitosa:', response);
