@@ -7,6 +7,7 @@ import { LoginComponent } from './user/views/login/login.component';
 import { AccessFormComponent } from './user/components/accessform/accessform.component';
 import { AddFormComponent } from './forms/add-form/add-form.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { EditFormComponent} from './user/components/edit-form/edit-form.component';
 import { FormsModule } from '@angular/forms';
 import { TestdbComponent } from './testdb/testdb.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     AccessFormComponent,
     AddFormComponent,
-    TestdbComponent
+    EditFormComponent,
+    TestdbComponent,
   ],
   imports: [
     RouterModule,

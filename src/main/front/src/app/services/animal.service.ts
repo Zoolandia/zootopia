@@ -1,34 +1,20 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
+import { Observable } from 'rxjs';
 import { Animal } from '../models/Animal.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnimalService {
-
-  constructor() { }
-  getAnimals():Animal[]{
-    return [
-      {
-          id:1,
-          name: "Paquito",
-          type:"un tipo",
-          family:"felino",
-          gender:"male",
-          date: new Date(),
-          img_url:"assets/img/animals/lobo.jpg",
-          origin:"Africa"
-      },
-      {
-          id:2,
-          name: "Pepito",
-          type:"un tipo",
-          family:"felino",
-          gender:"shemale",
-          date: new Date(),
-          img_url:"assets/img/animals/lobo.jpg",
-          origin:"America del Norte"
-      }
-  ];
+  private baseUrl = 'http://localhost:8080'
+  constructor(private http:HttpClient) {  }
+  getAnimals():Observable<Animal[]>{
+    return this.http.get<Animal[]>(this.baseUrl + "/animals");
   }
+
+  getAnimalById(id: number): Observable<Animal> {
+    return this.http.get<Animal>('http://localhost:8000/animals/' + id);
+  }
+
 }
