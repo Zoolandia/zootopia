@@ -1,6 +1,5 @@
-export interface ContinentInterface{
+export interface Continent{
     id:number,
     name:string,
-    img_url:string,
-
+    imgUrl:string,
 }

@@ -1,14 +1,43 @@
-<div class="d-flex justify-content-between header">
+<div>
+  <div class="d-flex justify-content-between header">
     <div class="d-flex">
-        <i class="bi bi-list mx-3 icon"></i>
-        <h1 class="mx-3 mt-2 text" style="text-decoration: underline">Dashboard</h1>
+      <i class="bi bi-list mx-3 icon" (click)="toggleDropdown1()"></i>
+      <h1 class="mx-3 mt-2 text" style="text-decoration: underline">Dashboard</h1>
     </div>
     <div class="d-flex position-relative">
-        <p class="mx-1 mt-3 text" style="font-size: 1.5em;">user</p>
-        <img src="../../../assets/img/user.png" class="pic mx-3 mt-3" (click)="toggleDropdown()">
-        <div *ngIf="showDropdown" class="dropdown-content position-absolute option-list" style="top: 100%; left: 0;">
-              <p>Log out</p>
-        </div>
+      <p class="mx-1 mt-3 text" style="font-size: 1.5em;">{{ user }}</p>
+      <img src="../../../assets/img/user.png" class="pic mx-3 mt-3" (click)="toggleDropdown2()">
     </div>
+  </div>
+
+  <div id="nav1" *ngIf="showDropdown1" class="dropdown-content position-absolute option-list" style= "left: 0.5%;">
+    <div class="family-item">
+      <img class="side" src="../../../assets/families1.png" alt="Felidos">
+      <span class="family-text">Felidos</span>
+    </div>
+    <div class="family-item">
+      <img class="side" src="../../../assets/families2.png" alt="Reptiles">
+      <span class="family-text">Reptiles</span>
+    </div>
+    <div class="family-item">
+      <img class="side" src="../../../assets/families3.png" alt="Canidos">
+      <span class="family-text">Canidos</span>
+    </div>
+    <div class="family-item">
+      <img class="side" src="../../../assets/families4.png" alt="Muestelidos">
+      <span class="family-text">Muestelidos</span>
+    </div>
+    <div class="family-item">
+      <img class="side" src="../../../assets/families5.png" alt="Lepoirae">
+      <span class="family-text">Lepoirae</span>
+    </div>
+    <div class="family-item">
+    <p class="add" (click)="addFamily()">+</p>
+    <span class="family-text">Añadir</span>
+    </div>
+  </div>
+  <div class="family-item1">
+  <div id="nav1" *ngIf="showDropdown2" class="dropdown-content position-absolute option-list" style=" right: 0.5%;">
+   <p class="side1" (click)="goToComponent()">Logout</p>
+  </div>
 </div>
-<router-outlet></router-outlet>
