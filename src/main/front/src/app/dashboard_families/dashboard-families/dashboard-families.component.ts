@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AnimalService } from 'src/app/services/animal.service';
+
 
 @Component({
   selector: 'app-dashboard-families',
@@ -7,9 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard-families.component.scss']
 })
 export class DashboardFamiliesComponent {
-  constructor(public router: Router) { }
+  AnimalService: any;
+  constructor(private router: Router, private animal: AnimalService) {}
+  ngOnInit() {
+    this.animal = this.AnimalService.getAnimal();
+  }
 
-  gotoComponent() {
+  gotoComponent3() {
     this.router.navigate(['/list']);
   }
 }
