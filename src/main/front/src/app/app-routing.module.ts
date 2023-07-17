@@ -5,7 +5,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { AccessFormComponent } from './user/components/accessform/accessform.component';
 import { AddFormComponent } from './forms/add-form/add-form.component';
 import { DashboardFamiliesComponent } from './dashboard_families/dashboard-families/dashboard-families.component';
-
+import { ListComponent } from './animals/list/list.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent }, 
@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: 'accessform', component: AccessFormComponent }, 
   { path: 'add-form', component: AddFormComponent },
   {path:'dashboard-families',component: DashboardFamiliesComponent},
-  
+  { path: 'list', component: ListComponent },
+
 ];
 
 
