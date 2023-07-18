@@ -6,30 +6,33 @@
         
         <div class="form-group mb-3">
             <label class=" mb-3 text-light fs-4 px-3 border border-success shadow">Nombre</label>
-            <input class="form-control border-success shadow" type="text" name="name" [(ngModel)]="name">
+       <input class="form-control border-success shadow" type="text" name="name" [(ngModel)]="name">
         </div>
         
         <div class="form-group mb-3 fs-4">
             <label class="mb-3 text-light px-3 border border-success shadow">Tipo</label>
-            <input class="form-control border-success shadow" type="text" name="type" [(ngModel)]="type">
+           <input class="form-control border-success shadow" type="text" name="type" [(ngModel)]="type">
         </div>
         
         <div class="form-group mb-3 fs-4">
             <label class="mb-3 text-light px-3 border border-success shadow">Familia</label>
-            <select class="form-control border border-success shadow" name="family" [(ngModel)]="family">
-                <option value="option1">Felino</option>
-                <option value="option2">Canino</option>
-                <option value="option3">Reptil</option>
-                <option value="option4">Mustelidos</option>
-                <option value="option5">Lepóridos</option>
+            <select class="form-control border border-success shadow" name="families_id" [(ngModel)]="families_id">
+                <option *ngFor="let family of familyList" [value]="family.id">{{ family.name }}</option>
             </select>
+        </div>
+
+        <div class="form-group mb-3 fs-4">
+            <label class="mb-3 text-light px-3 border border-success shadow">Continente</label>
+            <select class="form-control border border-success shadow" name="continent" [(ngModel)]="continents_id">
+                <option *ngFor="let continent of continentList" [value]="continent.id" >{{ continent.name }}</option>
+            </select> 
         </div>
         
         <div class="form-group mb-3 fs-4">
             <label class="mb-3 text-light px-3 border border-success shadow">Genero</label>
             <select class="form-control border border-success shadow" name="gender" [(ngModel)]="gender">
-                <option value="Macho">Macho</option>
-                <option value="Hembra">Hembra</option>
+                <option [ngValue]="'Macho'">Macho</option>
+                <option [ngValue]="'Hembra'">Hembra</option>
             </select>
         </div>
         
@@ -48,7 +51,8 @@
         </div>
         <div class="image-container" >
         <div *ngIf="image; else defaultImage">
-            <img class="selected-image mb-3 img-fluid border border-success w-50 h-50" [src]="getObjectURL(image)">
+            <img #selectedImage class="selected-image mb-3 img-fluid border border-success w-50 h-50" [src]="getObjectURL(image)">
+
         </div>
         <ng-template #defaultImage>
             <img class="selected-image mb-3 img-fluid border border-success w-50 h-50" src="../../../assets/img/formDefaultImage.png">
@@ -57,10 +61,10 @@
         <br>
         <div class="row ">
             <div class="col-5">
-            <button class="btn btn-danger btn-lg fs-2 px-3 shadow mx-4 shadow" type="button">Cancelar</button>
+                <button class="btn btn-danger btn-lg fs-2 px-3 shadow mx-4 shadow" type="button" (click)="redirectToDashboard()" >Cancelar</button>
             </div>
-            <div class="col-6  d-flex justify-content-end">
-            <button class="btn btn-success btn-lg fs-2 px-3 shadow mx-4 shadow" type="submit" (click)="submitForm()">Aplicar</button>
+                <div class="col-6  d-flex justify-content-end">
+                <button class="btn btn-success btn-lg fs-2 px-3 shadow mx-4 shadow" type="submit" (click)="submitForm()">Aplicar</button>
             </div>
         </div>
     </form>
