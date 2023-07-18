@@ -1,17 +1,12 @@
 package org.factoriaf5.zootopia.services;
 
-import org.factoriaf5.zootopia.models.User;
+import java.util.ArrayList;
+import java.util.Optional;
+
 import org.factoriaf5.zootopia.models.users.Users;
-import org.factoriaf5.zootopia.repositories.UsersRepository;
 import org.factoriaf5.zootopia.repositories.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-
-import java.util.ArrayList;
-import java.util.Optional;
 
 @Service
 
