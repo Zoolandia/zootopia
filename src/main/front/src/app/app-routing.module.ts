@@ -14,14 +14,10 @@ import { DashboardFamiliesComponent } from './dashboard_families/dashboard-famil
 
 const routes: Routes = [
   { path: '', component: LoginComponent }, 
-  { path: 'header', component: HeaderComponent,
-   children: [
-    { path: 'edit/:id', component: EditFormComponent }
-  ]},
+  { path: 'edit/:id', component: EditFormComponent },
   { path: 'login', component: LoginComponent }, 
   { path: 'accessform', component: AccessFormComponent }, 
   { path: 'add-form', component: AddFormComponent },
-  { path: '', component: LoginComponent },  
   { path: 'dashboard', component: DashboardFamiliesComponent }, 
   { path: 'animals', component: ListComponent }
 ];

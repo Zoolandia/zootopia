@@ -1,6 +1,6 @@
 import { Component,ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Animal } from "src/app/models/Animal.model";
 import {  Family  } from 'src/app/models/Family.model';
 import {Continent } from 'src/app/models/Continent.model';
@@ -25,7 +25,7 @@ export class EditFormComponent {
   continentList: Continent [] = [];
 
   @ViewChild('selectedImage') selectedImage: any;
-  constructor(private route: ActivatedRoute, private http: HttpClient,private  animalService:AnimalService) {
+  constructor(private router: Router,private route: ActivatedRoute, private http: HttpClient,private  animalService:AnimalService) {
     this.animalId = 0; 
   }
 
@@ -137,8 +137,8 @@ export class EditFormComponent {
       name: this.name,
       type: this.type,
       gender: this.gender,
-      families_id: this.families_id,
-      continents_id: this.continents_id,
+      family: { id: this.families_id },
+      continent: {id: this.continents_id},
       date: this.admission,
       imgUrl: imageUrl
     };
@@ -153,6 +153,10 @@ export class EditFormComponent {
           console.error('Error al actualizar la base de datos:', error);
         }
       );
+      this.router.navigate(['dashboard']);
+  }
+  redirectToDashboard(){
+      this.router.navigate(['dashboard']);
   }
 }
 
