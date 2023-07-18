@@ -15,7 +15,7 @@ export class DashboardFamiliesComponent {
     this.animal = this.AnimalService.getAnimal();
   }
 
-  gotoComponent3() {
+  listanimals() {
     this.router.navigate(['/list']);
   }
 }
