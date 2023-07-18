@@ -1,0 +1,13 @@
+<p>testdb works!</p>
+<table>
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Password</th>
+    </tr>
+    <tr *ngFor="let row of tableData">
+      <td>{{ row.id }}</td>
+      <td>{{ row.username }}</td>
+      <td>{{ row.password }}</td>
+    </tr>
+  </table>

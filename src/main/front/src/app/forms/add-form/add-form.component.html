@@ -1,0 +1,68 @@
+<div class="d-flex justify-content-center form-container mt-5">
+    <form>
+        <div>
+            <h1 class="d-flex justify-content-center text-light shadow">Añadir Ejemplar</h1>
+        </div>
+        
+        <div class="form-group mb-3">
+            <label class=" mb-3 text-light fs-4 px-3 border border-success shadow">Nombre</label>
+            <input class="form-control border-success shadow" type="text" name="name" [(ngModel)]="name">
+        </div>
+        
+        <div class="form-group mb-3 fs-4">
+            <label class="mb-3 text-light px-3 border border-success shadow">Tipo</label>
+            <input class="form-control border-success shadow" type="text" name="type" [(ngModel)]="type">
+        </div>
+        
+        <div class="form-group mb-3 fs-4">
+            <label class="mb-3 text-light px-3 border border-success shadow">Familia</label>
+            <select class="form-control border border-success shadow" name="family" [(ngModel)]="family">
+                <option value="option1">Felino</option>
+                <option value="option2">Canino</option>
+                <option value="option3">Reptil</option>
+                <option value="option4">Mustelidos</option>
+                <option value="option5">Lepóridos</option>
+            </select>
+        </div>
+        
+        <div class="form-group mb-3 fs-4">
+            <label class="mb-3 text-light px-3 border border-success shadow">Genero</label>
+            <select class="form-control border border-success shadow" name="gender" [(ngModel)]="gender">
+                <option value="Macho">Macho</option>
+                <option value="Hembra">Hembra</option>
+            </select>
+        </div>
+        
+        <div class="form-group mb-3 fs-4 ">
+            <label class="mb-3 text-light px-3 border border-success shadow">Fecha de admision</label>
+            <input class="form-control border border border-success shadow" type="date" name="admission" [(ngModel)]="admission">
+        </div>
+        
+        <div class="form-group mb-3 fs-4">
+            <label class="mb-3 text-light px-3 border border-success shadow">Imagen</label>
+            <br>
+            <button class="btn btn-success btn-lg py-1 px-3 fs-1 fw-bold border border-success shadow" onclick="document.getElementById('image').click()">
+                +
+            </button>
+            <input type="file" class="custom-file-input border border-success shadow" id="image" style="display: none;" (change)="onFileSelected($event)">
+        </div>
+        <div class="image-container" >
+        <div *ngIf="image; else defaultImage">
+            <img class="selected-image mb-3 img-fluid border border-success w-50 h-50" [src]="getObjectURL(image)">
+        </div>
+        <ng-template #defaultImage>
+            <img class="selected-image mb-3 img-fluid border border-success w-50 h-50" src="../../../assets/img/formDefaultImage.png">
+        </ng-template>
+        </div>
+        <br>
+        <div class="row ">
+            <div class="col-5">
+            <button class="btn btn-danger btn-lg fs-2 px-3 shadow mx-4 shadow" type="button">Cancelar</button>
+            </div>
+            <div class="col-6  d-flex justify-content-end">
+            <button class="btn btn-success btn-lg fs-2 px-3 shadow mx-4 shadow" type="submit" (click)="submitForm()">Aplicar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
