@@ -24,12 +24,8 @@ export class AccessFormComponent {
     this.http.get<User[]>('http://localhost:8000/users').subscribe((usuarios: User[]) => {
       const foundUser = usuarios.find(u => u.username === this.username && u.password === this.password);
       if (foundUser) {
-
-        
-
         this.userService.setUsername(foundUser.username);
-       this.router.navigate(['/dashboard']);
-
+        this.router.navigate(['/header']);
       } else {
         this.errorMessage = 'Los datos introducidos no son correctos, por favor compruébelos.';
       }

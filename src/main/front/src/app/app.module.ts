@@ -3,12 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { DashboardFamiliesComponent } from './dashboard_families/dashboard-families/dashboard-families.component';
 import { LoginComponent } from './user/views/login/login.component';
 import { AccessFormComponent } from './user/components/accessform/accessform.component';
 import { AddFormComponent } from './forms/add-form/add-form.component';
 import { HeaderComponent } from './shared/header/header.component';
-import { EditFormComponent} from './animals/edit-form/edit-form.component';
 import { FormsModule } from '@angular/forms';
 import { TestdbComponent } from './testdb/testdb.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -23,9 +22,9 @@ import { MatTableModule } from '@angular/material/table'
     LoginComponent,
     AccessFormComponent,
     AddFormComponent,
-    EditFormComponent,
     TestdbComponent,
     ListComponent,
+    DashboardFamiliesComponent,
     
   ],
   imports: [
@@ -36,6 +35,8 @@ import { MatTableModule } from '@angular/material/table'
     HttpClientModule,
     MatPaginatorModule,
     MatTableModule, 
+
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
