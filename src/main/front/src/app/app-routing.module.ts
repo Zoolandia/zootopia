@@ -7,16 +7,21 @@ import { AddFormComponent } from './forms/add-form/add-form.component';
 import { DashboardFamiliesComponent } from './dashboard_families/dashboard-families/dashboard-families.component';
 import { ListComponent } from './animals/list/list.component';
 
+
+import { AddFormComponent } from './forms/add-form/add-form.component';
+
+
+
 const routes: Routes = [
   { path: '', component: LoginComponent }, 
   { path: 'header', component: HeaderComponent }, 
   { path: 'login', component: LoginComponent }, 
   { path: 'accessform', component: AccessFormComponent }, 
   { path: 'add-form', component: AddFormComponent },
+
   {path:'dashboard-families',component: DashboardFamiliesComponent},
   { path: 'list', component: ListComponent },
 
-];
 
 
 @NgModule({

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-add-form',
@@ -15,7 +18,11 @@ export class AddFormComponent {
   admission: string = "";
   image: File | null = null;
 
+
   constructor(private http: HttpClient ,private router: Router) {}
+
+  constructor(private http: HttpClient) {}
+
 
   onFileSelected(event: any) {
     this.image = event.target.files[0];
@@ -46,8 +53,14 @@ export class AddFormComponent {
           console.error('Error al guardar los datos:', error);
         }
       );
+
   }
   cancel() {
     this.router.navigate(['/header']);
   }
 }
+
+  }
+}
+
+
